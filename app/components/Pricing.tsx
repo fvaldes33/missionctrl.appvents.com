@@ -76,7 +76,7 @@ export function Pricing() {
                       }}
                     />
 
-                    <span className="absolute inset-0 rounded-full bg-slate-300 transition peer-checked:bg-green-600"></span>
+                    <span className="absolute inset-0 rounded-full transition bg-primary-600 peer-checked:bg-green-600"></span>
 
                     <span className="absolute inset-0 m-1 h-6 w-6 rounded-full bg-white transition peer-checked:translate-x-6"></span>
                   </label>

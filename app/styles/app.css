@@ -1746,6 +1746,11 @@ select {
   padding-bottom: 2rem;
 }
 
+.py-40 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }

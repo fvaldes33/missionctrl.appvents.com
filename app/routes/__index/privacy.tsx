@@ -4,7 +4,7 @@ export default function Privacy() {
   return (
     <Page>
       <section className="hero">
-        <div className="container max-w-screen-xl flex items-center justify-center h-[70vh]">
+        <div className="container max-w-screen-xl flex items-center justify-center py-40">
           <h1 className="text-4xl lg:text-6xl font-bold capitalize max-w-lg leading-none text-center">
             Our Commitment to{" "}
             <span className="text-primary-600 bg-primary-200 rounded-md mt-1 px-2 inline-block whitespace-nowrap">
@@ -15,7 +15,7 @@ export default function Privacy() {
       </section>
 
       <section className="bg-primary-50 py-12">
-        <div className="prose pt-16 mx-auto lg:prose-lg">
+        <div className="container prose mx-auto lg:prose-lg">
           <h1>Privacy Policy</h1>
           <p>Last updated: February 25, 2023</p>
           <p>
@@ -437,11 +437,11 @@ export default function Privacy() {
               <p>
                 By visiting this page on our website:{" "}
                 <a
-                  href="https://www.appvents.com/chat"
+                  href="https://missionctrl.appvents.com/contact"
                   rel="external nofollow noopener noreferrer"
                   target="_blank"
                 >
-                  https://www.appvents.com/chat
+                  https://missionctrl.appvents.com/contact
                 </a>
               </p>
             </li>
