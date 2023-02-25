@@ -15,7 +15,7 @@ const ContactFormSchema = z.object({
   firstName: z.string().min(1, "First Name is required"),
   lastName: z.string().min(1, "Last Name is required"),
   email: z.string().email(),
-  message: z.string().min(250, "Message is required"),
+  message: z.string().min(100, "Message is required"),
 });
 
 export async function loader({ request }: LoaderArgs) {
@@ -134,7 +134,7 @@ export default function ChatPage() {
 
   return (
     <Page>
-      <section className="hero">
+      <section className="hero mt-32">
         <div className="container max-w-screen-xl flex items-center justify-center py-8 pb-24 md:py-24 lg:py-40">
           <h1 className="text-6xl lg:text-9xl font-bold capitalize max-w-screen-lg leading-none text-center">
             Let's have a little{" "}
@@ -195,7 +195,7 @@ export default function ChatPage() {
                   form.isValid("message") ? "text-primary-600" : "text-red-600"
                 )}
               >
-                {form.values.message.length} / 250
+                {form.values.message.length} / 100
               </span>
             </div>
           </div>
