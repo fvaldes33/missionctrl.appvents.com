@@ -15,7 +15,7 @@ export function Pricing() {
   const [plan, setPlan] = useState<string>("monthly");
 
   return (
-    <div id="download" className="bg-primary-50 py-24 sm:py-32">
+    <div id="download" className="bg-primary-50 pt-12 pb-24 sm:pb-32 md:pt-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">

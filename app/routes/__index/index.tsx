@@ -10,12 +10,12 @@ export default function Index() {
   return (
     <Page>
       <section className="">
-        <div className="container max-w-screen-xl md:flex items-center relative min-h-[90vh] md:min-h-[60vh] xl:min-h-[90vh] pt-32 md:pt-0 ">
-          <div className="w-full md:w-2/3 lg:w-1/2 flex-none">
+        <div className="container max-w-screen-xl md:flex items-center relative py-32">
+          <div className="w-full sm:w-2/3 md:w-1/2">
             <p className="uppercase tracking-wide text-lg font-semibold mb-12 font-mono">
               Mission Control
             </p>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-8">
+            <h1 className="text-4xl sm:text-6xl font-bold mb-8">
               Manage your DigitalOcean resources on the go.
             </h1>
             <p className="text-xl max-w-screen-md">
@@ -46,7 +46,7 @@ export default function Index() {
               </div>
             </div>
           </div>
-          <div className="w-full grid mt-10 md:mt-0 relative ">
+          <div className="w-full sm:w-1/3 md:w-1/2 flex-none grid mt-10 md:mt-0 relative">
             <img
               src={rotatedLeft}
               alt=""

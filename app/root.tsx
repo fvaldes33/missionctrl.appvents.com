@@ -1,6 +1,6 @@
 import tailwindcss from "./styles/app.css";
 
-import type { MetaFunction } from "@remix-run/node";
+import type { LoaderArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import {
   Links,
@@ -13,11 +13,25 @@ import {
 } from "@remix-run/react";
 import { Toaster } from "react-hot-toast";
 
-export const meta: MetaFunction = () => ({
+export const meta: MetaFunction = ({ data }) => ({
   charset: "utf-8",
   title: "Mission Control for DigitalOcean",
-  description: "",
+  description:
+    "Mission Control is the must-have iOS app for managing your DigitalOcean resources on the go.",
   viewport: "width=device-width,initial-scale=1",
+
+  // og
+  "og:title": "Mission Control for DigitalOcean",
+  "og:description":
+    "Mission Control is the must-have iOS app for managing your DigitalOcean resources on the go.",
+  "og:image": `${data.baseUrl}/assets/open-graph.jpg`,
+  "og:url": data.baseUrl,
+  "og:type": "website",
+
+  // twitter
+  "twitter:card": "summary",
+  "twitter:site": "@AppventsAgency",
+  "twitter:creator": "@francoxavier33",
 });
 
 export function links() {
@@ -36,11 +50,13 @@ export function links() {
   ];
 }
 
-export function loader() {
+export function loader({ request }: LoaderArgs) {
+  const url = new URL(request.url);
   return json({
     env: {
       NODE_ENV: process.env.NODE_ENV,
     },
+    baseUrl: url.origin,
   });
 }
 

@@ -135,8 +135,8 @@ export default function ChatPage() {
   return (
     <Page>
       <section className="hero mt-32">
-        <div className="container max-w-screen-xl flex items-center justify-center py-8 pb-24 md:py-24 lg:py-40">
-          <h1 className="text-6xl lg:text-9xl font-bold capitalize max-w-screen-lg leading-none text-center">
+        <div className="container max-w-lg flex items-center justify-center py-8 pb-24 md:py-24">
+          <h1 className="text-4xl lg:text-6xl font-bold capitalize max-w-screen-lg leading-none text-center">
             Let's have a little{" "}
             <span className="text-primary-600 bg-primary-200 rounded-md mt-1 px-2 inline-block whitespace-nowrap">
               chat
