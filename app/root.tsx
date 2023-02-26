@@ -29,7 +29,7 @@ export const meta: MetaFunction = ({ data }) => ({
   "og:type": "website",
 
   // twitter
-  "twitter:card": "summary",
+  "twitter:card": "summary_large_image",
   "twitter:site": "@AppventsAgency",
   "twitter:creator": "@francoxavier33",
 });
