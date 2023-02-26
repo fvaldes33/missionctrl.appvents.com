@@ -19,9 +19,8 @@ export default function Index() {
               Manage your DigitalOcean resources on the go.
             </h1>
             <p className="text-xl max-w-screen-md">
-              The must-have mobile app for managing your DigitalOcean resources
-              on the go. Choose between Dark Mode, Light Mode, or default to
-              your preferred iOS settings. No sign-in or account required.
+              The must-have mobile app to manage your DigitalOcean resources on
+              the go.
             </p>
             <div className="flex mt-10 items-center">
               <a
