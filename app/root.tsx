@@ -10,8 +10,11 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
+  useLocation,
 } from "@remix-run/react";
 import { Toaster } from "react-hot-toast";
+import { useEffect } from "react";
+import { pageview } from "./utils/gtag.client";
 
 export const meta: MetaFunction = ({ data }) => ({
   charset: "utf-8",
@@ -55,6 +58,7 @@ export function loader({ request }: LoaderArgs) {
   return json({
     env: {
       NODE_ENV: process.env.NODE_ENV,
+      GA_TRACKING_ID: process.env.GA_TRACKING_ID,
     },
     baseUrl: url.origin,
   });
@@ -62,6 +66,13 @@ export function loader({ request }: LoaderArgs) {
 
 export default function App() {
   const { env } = useLoaderData<typeof loader>();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    pageview(location.pathname, env.GA_TRACKING_ID!);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location]);
 
   return (
     <html lang="en">
@@ -90,6 +101,19 @@ export default function App() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff"></meta>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${env.GA_TRACKING_ID}`}
+        ></script>
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${env.GA_TRACKING_ID}', { page_path: window.location.pathname });`,
+          }}
+        />
       </head>
       <body className="min-h-full antialiased selection:bg-primary-600/25 font-sans">
         <Outlet />
