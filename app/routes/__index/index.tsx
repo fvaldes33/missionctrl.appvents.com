@@ -12,10 +12,26 @@ export default function Index() {
       <section className="">
         <div className="container max-w-screen-xl md:flex items-center relative py-32">
           <div className="w-full sm:w-2/3 md:w-1/2">
-            <p className="uppercase tracking-wide text-lg font-semibold mb-12 font-mono">
+            <a
+              href="https://www.producthunt.com/products/mission-control-for-digitalocean?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-mission&#0045;control&#0045;for&#0045;digitalocean"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=381845&theme=light"
+                alt="Mission&#0032;Control&#0032;for&#0032;DigitalOcean - Manage&#0032;your&#0032;DO&#0032;cloud&#0032;on&#0032;the&#0032;go | Product Hunt"
+                style={{
+                  width: "250px",
+                  height: "54px",
+                }}
+                width="250"
+                height="54"
+              />
+            </a>
+            {/* <p className="uppercase tracking-wide text-lg font-semibold mb-12 font-mono">
               Mission Control
-            </p>
-            <h1 className="text-4xl sm:text-6xl font-bold mb-8">
+            </p> */}
+            <h1 className="text-4xl sm:text-6xl font-bold mt-12 mb-8">
               Manage your DigitalOcean resources on the go.
             </h1>
             <p className="text-xl max-w-screen-md">
