@@ -1,10 +1,21 @@
 import { Link, NavLink } from "@remix-run/react";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export function Header() {
+  const phLaunch = dayjs.tz("2023-03-03 12:01 AM", "America/Los_Angeles");
+  const currTime = dayjs.tz(dayjs(), "America/Los_Angeles");
+
+  const finalPath = phLaunch <= currTime ? "posts" : "products";
+
   return (
     <header className="fixed top-8 z-50 w-full px-4">
       <div className="flex justify-center">
-        <div className="flex items-center justify-center rounded-2xl bg-zinc-800 backdrop-blur-md h-16 p-2 uppercase">
+        <div className="relative flex items-center justify-center rounded-2xl bg-zinc-800 backdrop-blur-md h-16 p-2 uppercase">
           <div className="h-full flex-none">
             <Link
               to="/"
@@ -28,16 +39,6 @@ export function Header() {
             >
               Download
             </NavLink>
-            {/* <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `text-sm tracking-wide transition-all duration-150 ${
-                isActive && "text-primary-600 font-bold"
-              } hover:underline hover:text-primary-600`
-            }
-          >
-            About
-          </NavLink> */}
           </nav>
           <div className="h-full flex-none">
             <Link
@@ -47,6 +48,19 @@ export function Header() {
               Contact
             </Link>
           </div>
+          {phLaunch <= currTime && (
+            <a
+              href={`https://www.producthunt.com/${finalPath}/mission-control-for-digitalocean?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-mission&#0045;control&#0045;for&#0045;digitalocean`}
+              target="_blank"
+              rel="noreferrer"
+              className="absolute top-full transform translate-y-2 bg-[#ff6154] rounded-full px-4 py-2 text-sm text-white"
+            >
+              <p className="font-bold text-center">
+                🎉 We're live on{" "}
+                <span className="font-black">Product Hunt</span> 🎉
+              </p>
+            </a>
+          )}
         </div>
       </div>
     </header>
