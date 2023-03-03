@@ -12,10 +12,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 export default function Index() {
-  const phLaunch = dayjs.tz("2023-03-03 12:01 AM", "America/Los_Angeles");
-  const currTime = dayjs.tz(dayjs(), "America/Los_Angeles");
-
-  const finalPath = phLaunch <= currTime ? "posts" : "products";
+  const finalPath = "posts";
   return (
     <Page>
       <section className="">

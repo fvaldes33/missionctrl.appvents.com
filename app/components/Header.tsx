@@ -7,10 +7,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 export function Header() {
-  const phLaunch = dayjs.tz("2023-03-03 12:01 AM", "America/Los_Angeles");
-  const currTime = dayjs.tz(dayjs(), "America/Los_Angeles");
-
-  const finalPath = phLaunch <= currTime ? "posts" : "products";
+  const finalPath = "posts";
 
   return (
     <header className="fixed top-8 z-50 w-full px-4">
@@ -48,19 +45,17 @@ export function Header() {
               Contact
             </Link>
           </div>
-          {phLaunch <= currTime && (
-            <a
-              href={`https://www.producthunt.com/${finalPath}/mission-control-for-digitalocean?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-mission&#0045;control&#0045;for&#0045;digitalocean`}
-              target="_blank"
-              rel="noreferrer"
-              className="absolute top-full transform translate-y-2 bg-[#ff6154] rounded-full px-4 py-2 text-sm text-white"
-            >
-              <p className="font-bold text-center">
-                🎉 We're live on{" "}
-                <span className="font-black">Product Hunt</span> 🎉
-              </p>
-            </a>
-          )}
+          <a
+            href={`https://www.producthunt.com/${finalPath}/mission-control-for-digitalocean?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-mission&#0045;control&#0045;for&#0045;digitalocean`}
+            target="_blank"
+            rel="noreferrer"
+            className="absolute top-full transform translate-y-2 bg-[#ff6154] rounded-full px-4 py-2 text-sm text-white"
+          >
+            <p className="font-bold text-center">
+              🎉 We're live on <span className="font-black">Product Hunt</span>{" "}
+              🎉
+            </p>
+          </a>
         </div>
       </div>
     </header>
