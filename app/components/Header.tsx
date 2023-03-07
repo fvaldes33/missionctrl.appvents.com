@@ -45,17 +45,6 @@ export function Header() {
               Contact
             </Link>
           </div>
-          <a
-            href={`https://www.producthunt.com/${finalPath}/mission-control-for-digitalocean?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-mission&#0045;control&#0045;for&#0045;digitalocean`}
-            target="_blank"
-            rel="noreferrer"
-            className="absolute top-full transform translate-y-2 bg-[#ff6154] rounded-full px-4 py-2 text-sm text-white"
-          >
-            <p className="font-bold text-center">
-              🎉 We're live on <span className="font-black">Product Hunt</span>{" "}
-              🎉
-            </p>
-          </a>
         </div>
       </div>
     </header>
