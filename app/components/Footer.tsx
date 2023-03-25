@@ -23,7 +23,7 @@ export function Footer() {
 
             <div className="flex items-center">
               <Link
-                to="/chat"
+                to="/contact"
                 className="inline-block bg-primary-600 text-white h-14 px-6 rounded-md font-bold uppercase font-mono transition-all hover:bg-primary-800"
               >
                 <div className="h-full flex items-center">Contact</div>
